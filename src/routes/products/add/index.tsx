@@ -56,8 +56,8 @@ function RouteComponent() {
       inventory: '' as InventoryValue,
       badge: undefined as BadgeValue | undefined,
     },
-    /* Define any validators. Using zod makes implementing validation easy, by simply passing the validation schema
-    to the action that needs to be validated */
+    /* Define any validators. Zod simplifies validation, we simply need to pass the validation schema
+    to the action that needs to be validated (in this case it's submission). */
     validators: {
       onSubmit: productSchema,
     },

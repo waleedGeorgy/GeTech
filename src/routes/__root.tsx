@@ -2,11 +2,11 @@ import { HeadContent, Scripts, createRootRouteWithContext } from '@tanstack/reac
 import { QueryClientProvider } from '@tanstack/react-query'
 import type { QueryClient } from '@tanstack/react-query'
 import { useEffect } from 'react'
-import { client } from '@/lib/appwrite'
 import appCss from '../styles.css?url'
+import { client } from '@/lib/appwrite'
 import { getThemeServerFn } from '@/lib/theme'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import Header from '../components/Header'
+import Header from '@/components/Header'
 
 /* To enable tanstack query client throughout the codebase, we need to use the 'createRootROuteWithContext' function
 instead of the normal createRootRoute, and pass it the query client as a generic. */
@@ -39,6 +39,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  // Query client is accessed by using the `useRouteContext()` hook from the route object
   const { queryClient } = Route.useRouteContext();
 
   const theme = Route.useLoaderData();

@@ -1,7 +1,7 @@
+import { Link } from "@tanstack/react-router"
 import { ShoppingBasket } from "lucide-react"
 import { Card, CardContent } from "./ui/card"
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "./ui/empty"
-import { Link } from "@tanstack/react-router"
 
 const EmptyCart = () => {
     return (

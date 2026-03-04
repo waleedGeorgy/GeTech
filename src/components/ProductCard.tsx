@@ -1,15 +1,15 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import { Check, Loader, ShoppingBag, Star } from "lucide-react";
-import { Button } from "./ui/button";
 import { Link, useRouter } from "@tanstack/react-router";
-import { cartItems } from "@/db/schema";
-import type { ProductSelect } from "@/db/schema";
 import { createServerFn } from "@tanstack/react-start";
-import z from "zod";
-import { db } from "@/db";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { eq } from "drizzle-orm";
+import z from "zod";
+import { Check, Loader, ShoppingBag, Star } from "lucide-react";
 import { handleUpdateCartItems } from "@/routes/cart";
+import { db } from "@/db";
+import { cartItems } from "@/db/schema";
+import type { ProductSelect } from "@/db/schema";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
 
 export const checkItemInCart = createServerFn({ method: "GET" })
     .inputValidator(z.object({ productId: z.string() }))

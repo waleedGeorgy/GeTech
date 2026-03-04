@@ -1,9 +1,9 @@
 import { Link } from '@tanstack/react-router'
+import { useQuery } from '@tanstack/react-query'
 import { Loader, ShoppingBag, ShoppingCart } from 'lucide-react'
+import { fetchCartItems } from '@/routes/cart'
 import { ThemeToggle } from './ThemeToggle'
 import { Button } from './ui/button'
-import { useQuery } from '@tanstack/react-query'
-import { fetchCartItems } from '@/routes/cart'
 
 export default function Header() {
   const { data: cartItems, isPending } = useQuery({

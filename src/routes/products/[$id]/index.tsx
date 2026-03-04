@@ -3,13 +3,13 @@ import { createFileRoute, Link, notFound, useRouter } from '@tanstack/react-rout
 import { createServerFn } from '@tanstack/react-start'
 import { eq, ne, sql } from 'drizzle-orm';
 import z from 'zod';
+import { ArrowLeft, Check, Heart, Info, Loader, ShoppingBag, Star } from 'lucide-react';
 import { db } from '@/db'
 import { products } from '@/db/schema';
-import { ArrowLeft, Check, Heart, Info, Loader, ShoppingBag, Star } from 'lucide-react';
+import { handleUpdateCartItems } from '@/routes/cart';
 import ProductCard, { checkItemInCart } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { handleUpdateCartItems } from '@/routes/cart';
 
 const fetchSingleProduct = createServerFn({ method: "GET" })
   .inputValidator(z.object({ id: z.string() }))

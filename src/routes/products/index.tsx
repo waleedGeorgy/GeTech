@@ -1,10 +1,10 @@
-import ProductCard from '@/components/ProductCard'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
-import { db } from '@/db'
-import { products } from '@/db/schema'
 import { createFileRoute } from '@tanstack/react-router'
 import { createMiddleware, createServerFn } from '@tanstack/react-start'
 import { desc } from 'drizzle-orm'
+import { db } from '@/db'
+import { products } from '@/db/schema'
+import ProductCard from '@/components/ProductCard'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 
 const fetchAllProducts = createServerFn({ method: 'GET' })
   .handler(async () => {
