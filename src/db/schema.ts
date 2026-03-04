@@ -23,7 +23,7 @@ export const products = pgTable('products', {
   description: text('description').notNull(),
   price: numeric('price', { precision: 10, scale: 2 }).notNull(),
   badge: badgeEnum('badge'),
-  inventory: inventoryEnum('inventory').notNull().default('in-stock'),
+  inventory: inventoryEnum('inventory').notNull().default('in-stock').notNull(),
   rating: numeric('rating', { precision: 3, scale: 2 }).notNull().default('0'),
   reviews: integer('reviews').notNull().default(0),
   image: varchar('image', { length: 512 }).notNull(),

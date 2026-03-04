@@ -15,6 +15,13 @@
       "when": 1772194965052,
       "tag": "0001_faulty_sauron",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1772624533212,
+      "tag": "0002_lazy_the_fallen",
+      "breakpoints": true
     }
   ]
 }

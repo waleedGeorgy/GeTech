@@ -10,7 +10,7 @@ export function getRouter() {
     scrollRestoration: true,
     defaultPreload: 'intent',
     defaultPreloadStaleTime: 0,
-    /* Enabling the tanstack router client to the entire app */
+    /* Enabling the tanstack router client for the entire app */
     context: {
       queryClient: new QueryClient(),
     },
