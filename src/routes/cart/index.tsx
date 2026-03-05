@@ -5,7 +5,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { desc, eq } from 'drizzle-orm';
 import { Loader, Minus, Plus, Trash } from 'lucide-react';
 import z from 'zod';
-import { addToCart, clearCart, removeCartItem, updateCartItem } from '@/data/cart';
+import { addToCart, clearCart, removeCartItem, updateCartItem } from '@/actions/cart';
 import { db } from '@/db';
 import { cartItems, products } from '@/db/schema';
 import { Button } from '@/components/ui/button';
@@ -57,13 +57,13 @@ export const handleDeleteCartItems = createServerFn({ method: 'POST' })
   });
 
 export const Route = createFileRoute('/cart/')({
-  component: RouteComponent,
+  component: CartPage,
   loader: async () => {
     return await fetchCartItems();
   }
 })
 
-function RouteComponent() {
+function CartPage() {
   const { items } = Route.useLoaderData();
 
   const router = useRouter();

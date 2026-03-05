@@ -27,13 +27,13 @@ const fetchRecommendedProductsExceptCurrent = createServerFn({ method: "GET" })
   })
 
 export const Route = createFileRoute('/products/$id/')({
-  component: RouteComponent,
+  component: ProductDetailsPage,
   loader: async ({ params }) => {
     const singleProduct = await fetchSingleProduct({ data: { id: params.id } });
     const recommendedProducts = await fetchRecommendedProductsExceptCurrent({ data: { id: params.id } });
     return { singleProduct, recommendedProducts }
   },
-  // Adding metadata for each product details page for better SEO and social sharing
+  // Adding metadata for each product details page for better SEO
   head: async ({ loaderData: product }) => {
     return {
       meta: [
@@ -52,7 +52,7 @@ export const Route = createFileRoute('/products/$id/')({
   },
 })
 
-function RouteComponent() {
+function ProductDetailsPage() {
   const { singleProduct, recommendedProducts } = Route.useLoaderData();
 
   const router = useRouter();

@@ -15,7 +15,7 @@ import { Separator } from '@/components/ui/separator';
 import { FieldError } from '@/components/ui/field';
 
 export const Route = createFileRoute('/products/add/')({
-  component: RouteComponent,
+  component: AddProductPage,
 });
 
 // Product schema
@@ -40,7 +40,7 @@ const createProduct = createServerFn({ method: "POST" })
     }
   })
 
-function RouteComponent() {
+function AddProductPage() {
   const navigate = useNavigate();
 
   const router = useRouter();

@@ -22,7 +22,7 @@ const loggerMiddleware = createMiddleware().server(async ({ request, next }) => 
 })
 
 export const Route = createFileRoute('/products/')({
-  component: RouteComponent,
+  component: ProductsPage,
   loader: async () => {
     const loadedProducts = await fetchAllProducts();
     return { loadedProducts }
@@ -40,7 +40,7 @@ export const Route = createFileRoute('/products/')({
   }
 })
 
-function RouteComponent() {
+function ProductsPage() {
   const { loadedProducts: allProducts } = Route.useLoaderData();
 
   return (
